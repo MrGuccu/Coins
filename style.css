@@ -1,0 +1,52 @@
+body {
+    background-color: black;
+    font-family: 'Poppins';
+    color: white;
+    margin: 0;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.slider {
+    width: 50%;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+  
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.coin {
+    width: 150px;
+    margin: 5px;
+    text-align: center;
+}
+.double {
+    display: flex;
+    flex-direction: row; /* Arrange images in a row */
+    justify-content: center; /* Center align images within the "double" class */
+}
+  
+.double img {
+    margin: 0 2.5px; /* Add 5px separation between images */
+    width: 50%;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
