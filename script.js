@@ -6,7 +6,7 @@ slider.addEventListener('input', function() {
   const flexItems = document.querySelectorAll('.coin');
 
   flexItems.forEach(item => {
-    item.style.width = value + 'px';
+    item.style.width = value + '%';
   });
 });
 
