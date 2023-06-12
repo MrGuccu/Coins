@@ -10,7 +10,24 @@ slider.addEventListener('input', function() {
   });
 });
 
-// Two Viewing Method
+// Hide double coin mode elements when the page loads
+window.addEventListener('DOMContentLoaded', function() {
+  const flexItems = document.querySelectorAll('.coin');
+
+  flexItems.forEach(item => {
+    const singleImages = item.querySelectorAll('.single img');
+    const doubleImages = item.querySelectorAll('.double img');
+
+    singleImages.forEach(image => {
+      image.style.display = 'block';
+    });
+    doubleImages.forEach(image => {
+      image.style.display = 'none';
+    });
+  });
+});
+
+// Toggle between single and double coin mode
 const toggleButton = document.getElementById('toggleButton');
 
 toggleButton.addEventListener('click', function() {
@@ -37,6 +54,7 @@ toggleButton.addEventListener('click', function() {
     }
   });
 });
+
 
 
 // Define an array of coin objects
