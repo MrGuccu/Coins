@@ -43,21 +43,6 @@ toggleButton.addEventListener('click', function() {
 const coins = [
   {
     origin: "United States",
-    denomination: "Standing Liberty Quarter",
-    year: 1925
-  },
-  {
-    origin: "United States",
-    denomination: "Capped Bust Half Dollar",
-    year: 1824
-  },
-  {
-    origin: "United States",
-    denomination: "Capped Bust Half Dollar",
-    year: 1829
-  },
-  {
-    origin: "United States",
     denomination: "Large Cent",
     year: 1798
   },
@@ -80,6 +65,86 @@ const coins = [
     origin: "United States",
     denomination: "Large Cent",
     year: 1803
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1816
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1817
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1819
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1820
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1825
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1830
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1832
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1833
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1835
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1837
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1840
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1842
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1849
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1851
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1852
+  },
+  {
+    origin: "United States",
+    denomination: "Large Cent",
+    year: 1855
   },
   {
     origin: "United States",
@@ -120,6 +185,21 @@ const coins = [
     origin: "United States",
     denomination: "Peace Dollar",
     year: 1923
+  },
+  {
+    origin: "United States",
+    denomination: "Standing Liberty Quarter",
+    year: 1925
+  },
+  {
+    origin: "United States",
+    denomination: "Capped Bust Half Dollar",
+    year: 1824
+  },
+  {
+    origin: "United States",
+    denomination: "Capped Bust Half Dollar",
+    year: 1829
   },
   {
     origin: "Switzerland",
