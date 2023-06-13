@@ -440,39 +440,3 @@ function apply(){
   toggleMode();
   toggleMode();
 }
-
-// Function to load settings from URL
-function loadSettingsFromURL() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const sortByParam = urlParams.get('sort');
-  const originParam = urlParams.get('origin');
-  const denominationParam = urlParams.get('denomination');
-
-  // Update the sort dropdown
-  const sortDropdown = document.getElementById('sort');
-  if (sortByParam) {
-    if (sortByParam === 'DateAscending') {
-      sortDropdown.value = 'ascending';
-    } else if (sortByParam === 'DateDescending') {
-      sortDropdown.value = 'descending';
-    }
-  }
-
-  // Update the origin dropdown
-  const originDropdown = document.getElementById('origin');
-  if (originParam) {
-    originDropdown.value = originParam;
-  }
-
-  // Update the denomination dropdown
-  const denominationDropdown = document.getElementById('denomination');
-  if (denominationParam) {
-    denominationDropdown.value = denominationParam;
-  }
-
-  // Update the displayed coins based on the loaded settings
-  updateDisplayedCoins();
-}
-
-// Call the function to load settings from URL
-loadSettingsFromURL();
