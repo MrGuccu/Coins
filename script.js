@@ -60,6 +60,21 @@ toggleButton.addEventListener('click', function() {
 // Define an array of coin objects
 const coins = [
   {
+    origin: "Connecticut",
+    denomination: "Facing Right Connecticut Copper",
+    year: 1785
+  },
+  {
+    origin: "Connecticut",
+    denomination: "Draped Bust Facing Left Connecticut Copper",
+    year: 1787
+  },
+  {
+    origin: "Connecticut",
+    denomination: "Mailed Bust Facing Left Connecticut Copper",
+    year: 1787
+  },
+  {
     origin: "United States",
     denomination: "Large Cent",
     year: 1798
@@ -220,6 +235,81 @@ const coins = [
     year: 1829
   },
   {
+    origin: "United States",
+    denomination: "Colombian Exchange Half Dollar",
+    year: 1893
+  },
+  {
+    origin: "United States",
+    denomination: "Barber Half Dollar",
+    year: 1906
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1934
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1935
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1937
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1940
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1941
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1942
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1943
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1944
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1945
+  },
+  {
+    origin: "United States",
+    denomination: "Walking Liberty Half Dollar",
+    year: 1947
+  },
+  {
+    origin: "United States",
+    denomination: "Franklin Half Dollar",
+    year: 1951
+  },
+  {
+    origin: "United States",
+    denomination: "Franklin Half Dollar",
+    year: 1963
+  },
+  {
+    origin: "United States",
+    denomination: "Kennedy Half Dollar",
+    year: 1964
+  },
+  {
     origin: "Switzerland",
     denomination: "Swiss 2 Frank",
     year: 1947
@@ -233,6 +323,11 @@ const coins = [
     origin: "Switzerland",
     denomination: "Swiss 0.5 Frank",
     year: 1944
+  },
+  {
+    origin: "Germany",
+    denomination: "German 1 Mark",
+    year: 1915
   },
 ];
 
