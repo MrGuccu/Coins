@@ -430,6 +430,7 @@ originDropdown.addEventListener('change', apply);
 denominationDropdown.addEventListener('change', updateDisplayedCoins);
 denominationDropdown.addEventListener('change', apply);
 document.getElementById('sort').addEventListener('change', updateDisplayedCoins);
+document.getElementById('sort').addEventListener('change', apply);
 
 // Initial display of coins
 updateDisplayedCoins();
