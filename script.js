@@ -441,20 +441,34 @@ function apply(){
   toggleMode();
 }
 
-window.onload = function () {
-  // Parse the URL parameters
+// Function to load settings from URL
+function loadSettingsFromURL() {
   const urlParams = new URLSearchParams(window.location.search);
-  const params = urlParams.get('settings').split(',');
+  const sortByParam = urlParams.get('sort');
+  const originParam = urlParams.get('origin');
+  const denominationParam = urlParams.get('denomination');
 
-  // Set the filter and sort options based on the URL parameters
-  const sortOption = params[0];
-  const originFilter = params[1];
-  const denominationFilter = params[2];
+  // Update the sort dropdown
+  const sortDropdown = document.getElementById('sort');
+  if (sortByParam) {
+    sortDropdown.value = sortByParam;
+  }
 
-  document.getElementById('sort').value = sortOption;
-  document.getElementById('origin').value = originFilter;
-  document.getElementById('denomination').value = denominationFilter;
+  // Update the origin dropdown
+  const originDropdown = document.getElementById('origin');
+  if (originParam) {
+    originDropdown.value = originParam;
+  }
 
-  // Update the displayed coins based on the URL parameters
+  // Update the denomination dropdown
+  const denominationDropdown = document.getElementById('denomination');
+  if (denominationParam) {
+    denominationDropdown.value = denominationParam;
+  }
+
+  // Update the displayed coins based on the loaded settings
   updateDisplayedCoins();
-};
+}
+
+// Call the function to load settings from URL
+loadSettingsFromURL();
