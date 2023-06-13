@@ -451,7 +451,11 @@ function loadSettingsFromURL() {
   // Update the sort dropdown
   const sortDropdown = document.getElementById('sort');
   if (sortByParam) {
-    sortDropdown.value = sortByParam;
+    if (sortByParam === 'DateAscending') {
+      sortDropdown.value = 'ascending';
+    } else if (sortByParam === 'DateDescending') {
+      sortDropdown.value = 'descending';
+    }
   }
 
   // Update the origin dropdown
