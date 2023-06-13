@@ -1,3 +1,33 @@
+let isSingle = true; // Boolean variable to track the mode (single or double)
+
+const toggleButton = document.getElementById('toggleButton');
+
+// Function to toggle between single and double modes
+function toggleMode() {
+  isSingle = !isSingle; // Toggle the mode
+
+  // Get all coin elements
+  const coinElements = document.querySelectorAll('.coin');
+
+  // Iterate over each coin element and show/hide the appropriate images based on the mode
+  coinElements.forEach((coinElement) => {
+    const singleImages = coinElement.querySelectorAll('.single img');
+    const doubleImages = coinElement.querySelectorAll('.double img');
+
+    singleImages.forEach((singleImage) => {
+      singleImage.style.display = isSingle ? 'block' : 'none';
+    });
+
+    doubleImages.forEach((doubleImage) => {
+      doubleImage.style.display = isSingle ? 'none' : 'block';
+    });
+  });
+}
+
+// Add event listener to the toggleButton
+toggleButton.addEventListener('click', toggleMode);
+
+
 // Slider
 const slider = document.getElementById('slider');
 
@@ -9,52 +39,6 @@ slider.addEventListener('input', function() {
     item.style.width = value + '%';
   });
 });
-
-// Hide double coin mode elements when the page loads
-window.addEventListener('DOMContentLoaded', function() {
-  const flexItems = document.querySelectorAll('.coin');
-
-  flexItems.forEach(item => {
-    const singleImages = item.querySelectorAll('.single img');
-    const doubleImages = item.querySelectorAll('.double img');
-
-    singleImages.forEach(image => {
-      image.style.display = 'block';
-    });
-    doubleImages.forEach(image => {
-      image.style.display = 'none';
-    });
-  });
-});
-
-// Toggle between single and double coin mode
-const toggleButton = document.getElementById('toggleButton');
-
-toggleButton.addEventListener('click', function() {
-  const flexItems = document.querySelectorAll('.coin');
-
-  flexItems.forEach(item => {
-    const singleImages = item.querySelectorAll('.single img');
-    const doubleImages = item.querySelectorAll('.double img');
-
-    if (singleImages[0].style.display === 'none') {
-      singleImages.forEach(image => {
-        image.style.display = 'block';
-      });
-      doubleImages.forEach(image => {
-        image.style.display = 'none';
-      });
-    } else {
-      singleImages.forEach(image => {
-        image.style.display = 'none';
-      });
-      doubleImages.forEach(image => {
-        image.style.display = 'block';
-      });
-    }
-  });
-});
-
 
 let showcoins = [];
 
@@ -373,6 +357,9 @@ function createCoinElement(coin) {
   coinElement.appendChild(singleElement);
   coinElement.appendChild(yearElement);
 
+  const value = slider.value;
+  coinElement.style.width = value + '%';
+
   return coinElement;
 }
 
@@ -439,8 +426,17 @@ uniqueDenominations.forEach((denomination) => {
 
 // Add event listeners to filters and sorting options
 originDropdown.addEventListener('change', updateDisplayedCoins);
+originDropdown.addEventListener('change', apply);
 denominationDropdown.addEventListener('change', updateDisplayedCoins);
+denominationDropdown.addEventListener('change', apply);
 document.getElementById('sort').addEventListener('change', updateDisplayedCoins);
 
 // Initial display of coins
 updateDisplayedCoins();
+toggleMode();
+
+function apply(){
+  toggleMode();
+  toggleMode();
+}
+
