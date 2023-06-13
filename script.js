@@ -441,3 +441,20 @@ function apply(){
   toggleMode();
 }
 
+window.onload = function () {
+  // Parse the URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const params = urlParams.get('settings').split(',');
+
+  // Set the filter and sort options based on the URL parameters
+  const sortOption = params[0];
+  const originFilter = params[1];
+  const denominationFilter = params[2];
+
+  document.getElementById('sort').value = sortOption;
+  document.getElementById('origin').value = originFilter;
+  document.getElementById('denomination').value = denominationFilter;
+
+  // Update the displayed coins based on the URL parameters
+  updateDisplayedCoins();
+};
