@@ -221,7 +221,7 @@ const coins = [
   },
   {
     origin: "United States",
-    denomination: "Colombian Exchange Half Dollar",
+    denomination: "Columbian Exchange Half Dollar",
     year: 1893
   },
   {
