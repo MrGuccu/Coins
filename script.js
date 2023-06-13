@@ -56,6 +56,7 @@ toggleButton.addEventListener('click', function() {
 });
 
 
+let showcoins = [];
 
 // Define an array of coin objects
 const coins = [
@@ -378,7 +379,68 @@ function createCoinElement(coin) {
 // Add coins to the flex container
 const flexContainer = document.querySelector('.flex-container');
 
-coins.forEach(function (coin) {
+showcoins.forEach(function (coin) {
   const coinElement = createCoinElement(coin);
   flexContainer.appendChild(coinElement);
 });
+
+
+// Function to update the displayed coins based on the filters and sorting
+function updateDisplayedCoins() {
+  const originFilter = document.getElementById('origin').value;
+  const denominationFilter = document.getElementById('denomination').value;
+  const sortOption = document.getElementById('sort').value;
+
+  // Filter coins based on origin and denomination
+  const filteredCoins = coins.filter((coin) => {
+    const originMatch = originFilter === 'all' || coin.origin === originFilter;
+    const denominationMatch = denominationFilter === 'all' || coin.denomination === denominationFilter;
+    return originMatch && denominationMatch;
+  });
+
+  // Sort coins based on the selected option
+  filteredCoins.sort((a, b) => {
+    if (sortOption === 'ascending') {
+      return a.year - b.year;
+    } else if (sortOption === 'descending') {
+      return b.year - a.year;
+    }
+  });
+
+  // Clear the flex container
+  flexContainer.innerHTML = '';
+
+  // Add the filtered and sorted coins to the flex container
+  filteredCoins.forEach((coin) => {
+    const coinElement = createCoinElement(coin);
+    flexContainer.appendChild(coinElement);
+  });
+}
+
+// Populate Origin Drop-down
+const originDropdown = document.getElementById('origin');
+const uniqueOrigins = [...new Set(coins.map((coin) => coin.origin))];
+uniqueOrigins.forEach((origin) => {
+  const option = document.createElement('option');
+  option.value = origin;
+  option.textContent = origin;
+  originDropdown.appendChild(option);
+});
+
+// Populate Denomination Drop-down
+const denominationDropdown = document.getElementById('denomination');
+const uniqueDenominations = [...new Set(coins.map((coin) => coin.denomination))];
+uniqueDenominations.forEach((denomination) => {
+  const option = document.createElement('option');
+  option.value = denomination;
+  option.textContent = denomination;
+  denominationDropdown.appendChild(option);
+});
+
+// Add event listeners to filters and sorting options
+originDropdown.addEventListener('change', updateDisplayedCoins);
+denominationDropdown.addEventListener('change', updateDisplayedCoins);
+document.getElementById('sort').addEventListener('change', updateDisplayedCoins);
+
+// Initial display of coins
+updateDisplayedCoins();
