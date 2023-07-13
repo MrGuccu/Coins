@@ -1,4 +1,5 @@
-let isSingle = true; // Boolean variable to track the mode (single or double)
+// Boolean variable to track the mode (single or double)
+let isSingle = true;
 
 const toggleButton = document.getElementById('toggleButton');
 
@@ -39,6 +40,25 @@ slider.addEventListener('input', function() {
     item.style.width = value + '%';
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const originSelect = document.getElementById('origin');
+  const flexContainer = document.querySelector('.flex-container');
+  const usTypeSetSection = document.querySelector('.US-Type-Set');
+
+  originSelect.addEventListener('change', function() {
+    const selectedOrigin = originSelect.value;
+
+    if (selectedOrigin === 'US-Type-Set') {
+      flexContainer.style.display = 'none'; // Hide the default flex container
+      usTypeSetSection.style.display = 'block'; // Show the US Type Set section
+    } else {
+      flexContainer.style.display = 'flex'; // Show the default flex container
+      usTypeSetSection.style.display = 'none'; // Hide the US Type Set section
+    }
+  });
+});
+
 
 let showcoins = [];
 
@@ -313,6 +333,46 @@ const coins = [
     origin: "Germany",
     denomination: "German 1 Mark",
     year: 1915
+  },
+  {
+    origin: "United States",
+    denomination: "20 Cent",
+    year: 1875
+  },
+  {
+    origin: "United States",
+    denomination: "Morgan Dollar",
+    year: 1885
+  },
+  {
+    origin: "United States",
+    denomination: "Morgan Dollar",
+    year: 1921
+  },
+  {
+    origin: "United States",
+    denomination: "Half Cent",
+    year: 1832
+  },
+  {
+    origin: "United States",
+    denomination: "2 Cent",
+    year: 1866
+  },
+  {
+    origin: "United States",
+    denomination: "Seated Liberty Dime",
+    year: 1890
+  },
+  {
+    origin: "United States",
+    denomination: "3 Cent",
+    year: 1865
+  },
+  {
+    origin: "United States",
+    denomination: "Indian Head Cent",
+    year: 1889
   },
 ];
 
