@@ -500,3 +500,23 @@ function apply(){
   toggleMode();
   toggleMode();
 }
+
+// Website domain type set
+
+// Get the current website domain
+var currentDomain = window.location.hostname;
+
+// Define the target domain
+var targetDomain = 'aronszucs.com';
+
+// Define the target path
+var targetPath = '/US-type-set';
+
+// Check if the current domain and path match the target
+if (currentDomain === targetDomain && window.location.pathname === targetPath) {
+  // Get a reference to the dropdown element
+  var dropdown = document.getElementById('origin');
+
+  // Set the selected value of the dropdown to "US-Type-Set"
+  dropdown.value = 'US-Type-Set';
+}
